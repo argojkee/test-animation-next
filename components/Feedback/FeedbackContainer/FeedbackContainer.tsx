@@ -1,7 +1,6 @@
 import Container from "@/components/Container/Container";
 import BannerFeedback from "../BannerFeedback/BannerFeedback";
 import AnimationContainer from "../AnimationContainer/AnimationContainer";
-import { nanoid } from "nanoid";
 import { StaticImageData } from "next/image";
 import { FC } from "react";
 
@@ -59,10 +58,10 @@ const FeedbackContainer: FC = () => {
     <section>
       <Container>
         <BannerFeedback />
-        {cats.map(({ cat, textpos, text, top, left, rotate }) => (
+        {cats.map(({ cat, textpos, text, top, left, rotate }, index) => (
           <AnimationContainer
             className="animation-container"
-            key={nanoid()}
+            key={index}
             rotate={rotate}
             cat={cat}
             text={text}

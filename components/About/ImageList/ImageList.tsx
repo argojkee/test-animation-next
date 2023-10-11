@@ -1,7 +1,6 @@
 import { StaticImageData } from "next/image";
 import ImageItem from "../ImageItem/ImageItem";
 import StyledImageList from "./StyledImageList.styled";
-import { nanoid } from "nanoid";
 import { FC } from "react";
 
 interface ImageListProps {
@@ -12,8 +11,8 @@ interface ImageListProps {
 const ImageList: FC<ImageListProps> = ({ items, position }) => {
   return (
     <StyledImageList className={position}>
-      {items.map((img) => (
-        <li key={nanoid()}>
+      {items.map((img, index) => (
+        <li key={index}>
           <ImageItem image={img} />
         </li>
       ))}
