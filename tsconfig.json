@@ -17,6 +17,12 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/Feedback/BannerFeedback/StyledBannerFeedback.styled.ts",
+    "components/Feedback/AnimationContainer/StyledAnimationContainer.styled.ts"
+  ],
   "exclude": ["node_modules"]
 }
