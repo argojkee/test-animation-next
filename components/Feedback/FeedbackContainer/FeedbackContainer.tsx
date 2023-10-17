@@ -1,8 +1,8 @@
 import Container from "@/components/Container/Container";
 import BannerFeedback from "../BannerFeedback/BannerFeedback";
-import AnimationContainer from "../AnimationContainer/AnimationContainer";
 import { StaticImageData } from "next/image";
 import { FC } from "react";
+import AnimationGlobalContainer from "@/components/AnimationGlobalContainer/AnimationGlobalContainer";
 
 import cat1 from "../../../images/feedback/cat1.jpg";
 import cat2 from "../../../images/feedback/cat2.jpeg";
@@ -18,12 +18,12 @@ export interface CatElementInfo {
   rotate: "left" | "right";
 }
 
-const cats: CatElementInfo[] = [
+const catsTop: CatElementInfo[] = [
   {
     cat: cat1,
     textpos: "right",
     text: "I'm happy",
-    top: "15vw",
+    top: "0",
     left: "6vw",
     rotate: "left",
   },
@@ -31,15 +31,18 @@ const cats: CatElementInfo[] = [
     cat: cat4,
     textpos: "left",
     text: "Thank you",
-    top: "19vw",
+    top: "10vw",
     left: "84vw",
     rotate: "right",
   },
+];
+
+const catsBottom: CatElementInfo[] = [
   {
     cat: cat3,
     textpos: "left",
     text: "I miss you.",
-    top: "44vw",
+    top: "14vw",
     left: "15vw",
     rotate: "left",
   },
@@ -47,7 +50,7 @@ const cats: CatElementInfo[] = [
     cat: cat2,
     textpos: "right",
     text: "I'm waiting",
-    top: "50vw",
+    top: "18vw",
     left: "71vw",
     rotate: "right",
   },
@@ -58,18 +61,9 @@ const FeedbackContainer: FC = () => {
     <section>
       <Container>
         <BannerFeedback />
-        {cats.map(({ cat, textpos, text, top, left, rotate }, index) => (
-          <AnimationContainer
-            className="animation-container"
-            key={index}
-            rotate={rotate}
-            cat={cat}
-            text={text}
-            textpos={textpos}
-            top={top}
-            left={left}
-          />
-        ))}
+
+        <AnimationGlobalContainer position="top" cats={catsTop} />
+        <AnimationGlobalContainer position="bottom" cats={catsBottom} />
       </Container>
     </section>
   );
