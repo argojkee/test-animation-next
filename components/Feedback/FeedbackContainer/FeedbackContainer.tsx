@@ -58,7 +58,7 @@ const catsBottom: CatElementInfo[] = [
 
 const FeedbackContainer: FC = () => {
   return (
-    <section>
+    <section className="feedback-section">
       <Container>
         <BannerFeedback />
 

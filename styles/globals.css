@@ -97,6 +97,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.feedback-section {
+  margin-bottom: 2vh;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
