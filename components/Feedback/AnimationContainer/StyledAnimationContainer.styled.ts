@@ -11,10 +11,10 @@ const StyledAnimationContainer = styled.div<{
   top: ${(props) => props.top};
   transform: ${(props) => `scale(${props.sizing})`};
   opacity: ${(props) => props.sizing};
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition: transform 500ms ease, opacity 500ms ease;
 
   p {
-    transition: rotate 300ms ease;
+    transition: rotate 500ms ease;
     rotate: ${(props) =>
       props.rotate === "left"
         ? `${props.sizing * 45 + 315}deg`
@@ -22,7 +22,7 @@ const StyledAnimationContainer = styled.div<{
   }
 
   img {
-    transition: rotate 300ms ease;
+    transition: rotate 500ms ease;
 
     width: 12vw;
     height: 12vw;
